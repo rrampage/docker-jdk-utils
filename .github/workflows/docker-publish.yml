@@ -1,0 +1,27 @@
+name: Publish Docker
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish JDK-8
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: ${{ secrets.DOCKER_USERNAME }}/docker-jdk-utils
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: jdk-8-aws/Dockerfile
+        tags:  "jdk-8"
+    - name: Publish JDK-8
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: ${{ secrets.DOCKER_USERNAME }}/docker-jdk-utils
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: jdk-11-aws/Dockerfile
+        tags:  "jdk-11"
