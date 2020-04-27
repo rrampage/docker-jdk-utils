@@ -17,7 +17,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         dockerfile: jdk-8-aws/Dockerfile
         tags:  "jdk-8"
-    - name: Publish JDK-8
+    - name: Publish JDK-11
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: ${{ secrets.DOCKER_USERNAME }}/docker-jdk-utils
