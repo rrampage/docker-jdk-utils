@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Publish JDK-8
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: ${{ secrets.DOCKER_USERNAME }}/docker-jdk-utils
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -18,7 +18,7 @@ jobs:
         dockerfile: jdk-8-aws/Dockerfile
         tags:  "jdk-8"
     - name: Publish JDK-11
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: ${{ secrets.DOCKER_USERNAME }}/docker-jdk-utils
         username: ${{ secrets.DOCKER_USERNAME }}
